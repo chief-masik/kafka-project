@@ -1,9 +1,8 @@
 package com.example.kafkaprojectpyatakov.config;
 
-import com.example.kafkaprojectpyatakov.DTO.Message;
+import com.example.kafkaprojectpyatakov.model.Message;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.common.serialization.LongSerializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,7 +19,8 @@ import java.util.Map;
 
 @Configuration
 public class KafkaConfig {
-    private String kafkaServer="localhost:9092";
+    @Value("${spring.kafka.bootstrap-servers}")
+    private String kafkaServer;
     @Value("${spring.kafka.consumer.group-id}")
     private String kafkaGroupId;
 
@@ -47,6 +47,8 @@ public class KafkaConfig {
                 JsonDeserializer.class);
         props.put(ConsumerConfig.GROUP_ID_CONFIG,
                 kafkaGroupId);
+        props.put(JsonDeserializer.TRUSTED_PACKAGES,
+                "com.example.kafkaprojectpyatakov.model");
         return props;
     }
 

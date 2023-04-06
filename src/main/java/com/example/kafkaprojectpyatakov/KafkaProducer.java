@@ -1,6 +1,6 @@
 package com.example.kafkaprojectpyatakov;
 
-import com.example.kafkaprojectpyatakov.DTO.Message;
+import com.example.kafkaprojectpyatakov.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;

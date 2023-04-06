@@ -1,6 +1,5 @@
-package com.example.kafkaprojectpyatakov.DTO;
+package com.example.kafkaprojectpyatakov.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data

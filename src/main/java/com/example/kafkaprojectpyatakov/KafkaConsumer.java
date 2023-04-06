@@ -1,6 +1,6 @@
 package com.example.kafkaprojectpyatakov;
 
-import com.example.kafkaprojectpyatakov.DTO.Message;
+import com.example.kafkaprojectpyatakov.model.Message;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.annotation.KafkaListener;
